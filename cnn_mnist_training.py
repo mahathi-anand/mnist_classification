@@ -11,6 +11,7 @@ transform = transforms.Compose([transforms.ToTensor()])
 
 print_info("Loading the MNIST Training and Test Data")
 save_path = os.path.join(os.path.dirname(__file__), "data")
+os.makedirs(save_path, exist_ok=True)
 data_train = MNIST(root = save_path, train = True, transform = transforms.ToTensor(), download = False)
 data_test = MNIST(root = save_path, train = False, transform = transforms.ToTensor(), download = False)
 
